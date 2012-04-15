@@ -8,8 +8,8 @@ enable :sessions
 
 BASE_URL = "https://www.pivotaltracker.com/services/v3"
 
-get '/auth' do
-  authorize('pmcclure@rumblelabs.com', 'novacane8')
+post '/auth' do
+  authorize(params[:email], params[:password])
 end
 
 get '/projects' do
